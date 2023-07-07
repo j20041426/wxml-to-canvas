@@ -1,6 +1,6 @@
 {
   "name": "@j20041426/wxml-to-canvas",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "",
   "main": "miniprogram_dist/index.js",
   "scripts": {
@@ -30,7 +30,11 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/j20041426/wxml-to-canvas.git"
+  },
+  "homepage": "https://github.com/j20041426/wxml-to-canvas#readme",
+  "bugs": {
+    "url": "https://github.com/j20041426/wxml-to-canvas/issues"
   },
   "author": "j20041426",
   "license": "MIT",

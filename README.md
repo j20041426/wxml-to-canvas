@@ -15,7 +15,7 @@
 #### Step1. npm 安装，参考 [小程序 npm 支持](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html)
 
 ```
-npm install --save wxml-to-canvas
+npm install --save @j20041426/wxml-to-canvas
 ```
 
 #### Step2. JSON 组件声明
