@@ -1,15 +1,14 @@
 # wxml-to-canvas
 
-[![](https://img.shields.io/npm/v/wxml-to-canvas)](https://www.npmjs.com/package/wxml-to-canvas)
-[![](https://img.shields.io/npm/l/wxml-to-canvas)](https://github.com/wechat-miniprogram/wxml-to-canvas)
-
-小程序内通过静态模板和样式绘制 canvas ，导出图片，可用于生成分享图等场景。[代码片段](https://developers.weixin.qq.com/s/r6UBlEm17pc6)
-
-PS.该版本优化了部分细节，使得该组件更易使用。
+该版本优化了部分细节，使得该组件更易使用。
 1. 增加font-weight属性，支持`normal`和`bold`参数。
 2. border-radius增加对4个圆角分别控制的写法，例如`'0 0 10 10'`。
 3. 解决iOS系统报错的问题，iOS系统下画布的高度限制在4096以内。
 
+[![](https://img.shields.io/npm/v/wxml-to-canvas)](https://www.npmjs.com/package/wxml-to-canvas)
+[![](https://img.shields.io/npm/l/wxml-to-canvas)](https://github.com/wechat-miniprogram/wxml-to-canvas)
+
+小程序内通过静态模板和样式绘制 canvas ，导出图片，可用于生成分享图等场景。[代码片段](https://developers.weixin.qq.com/s/r6UBlEm17pc6)
 
 ## 使用方法
 
