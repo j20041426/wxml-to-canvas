@@ -8,7 +8,7 @@ Page({
     this.widget = this.selectComponent('.widget')
   },
   renderToCanvas() {
-    const p1 = this.widget.renderToCanvas({ wxml, style })
+    const p1 = this.widget.renderToCanvas({wxml, style})
     p1.then((res) => {
       console.log('container', res.layoutBox)
       this.container = res

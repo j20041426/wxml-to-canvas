@@ -22,8 +22,8 @@ Component({
   },
   lifetimes: {
     attached() {
-      const {SDKVersion, pixelRatio: dpr} = wx.getSystemInfoSync()
-      const use2dCanvas = compareVersion(SDKVersion, '2.9.2') >= 0
+      const {SDKVersion, pixelRatio: dpr, platform} = wx.getSystemInfoSync()
+      const use2dCanvas = compareVersion(SDKVersion, '2.9.2') >= 0 && platform != 'ios' // ios强制使用旧版canvas接口
       this.dpr = dpr
       this.setData({use2dCanvas}, () => {
         if (use2dCanvas) {

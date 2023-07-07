@@ -6,15 +6,23 @@ class Draw {
   }
 
   roundRect(x, y, w, h, r, fill = true, stroke = false) {
-    if (r < 0) return
+    let R
+    if (typeof r === 'string') {
+      R = r.split(' ').map(r => parseInt(r))
+      if (R.length < 4) return
+    } else {
+      if (r < 0) return
+      R = [r, r, r, r]
+    }
+
     const ctx = this.ctx
 
     ctx.beginPath()
-    ctx.arc(x + r, y + r, r, Math.PI, Math.PI * 3 / 2)
-    ctx.arc(x + w - r, y + r, r, Math.PI * 3 / 2, 0)
-    ctx.arc(x + w - r, y + h - r, r, 0, Math.PI / 2)
-    ctx.arc(x + r, y + h - r, r, Math.PI / 2, Math.PI)
-    ctx.lineTo(x, y + r)
+    ctx.arc(x + R[0], y + R[0], R[0], Math.PI, Math.PI * 3 / 2)
+    ctx.arc(x + w - R[1], y + R[1], R[1], Math.PI * 3 / 2, 0)
+    ctx.arc(x + w - R[2], y + h - R[2], R[2], 0, Math.PI / 2)
+    ctx.arc(x + R[3], y + h - R[3], R[3], Math.PI / 2, Math.PI)
+    ctx.lineTo(x, y + R[0])
     if (stroke) ctx.stroke()
     if (fill) ctx.fill()
   }
@@ -42,7 +50,12 @@ class Draw {
     ctx.fillStyle = backgroundColor
     const innerWidth = w - 2 * borderWidth
     const innerHeight = h - 2 * borderWidth
-    const innerRadius = borderRadius - borderWidth >= 0 ? borderRadius - borderWidth : 0
+    let innerRadius
+    if (typeof borderRadius === 'string') {
+      innerRadius = borderRadius.split(' ').map(r => (r - borderWidth >= 0 ? r - borderWidth : 0)).join(' ')
+    } else {
+      innerRadius = borderRadius - borderWidth >= 0 ? borderRadius - borderWidth : 0
+    }
     this.roundRect(x + borderWidth, y + borderWidth, innerWidth, innerHeight, innerRadius)
     ctx.restore()
   }
@@ -114,6 +127,7 @@ class Draw {
       color = '#000',
       lineHeight = '1.4em',
       fontSize = 14,
+      fontWeight = 'normal',
       textAlign = 'left',
       verticalAlign = 'top',
       backgroundColor = 'transparent'
@@ -126,7 +140,7 @@ class Draw {
 
     ctx.save()
     ctx.textBaseline = 'top'
-    ctx.font = `${fontSize}px sans-serif`
+    ctx.font = `${fontWeight} ${fontSize}px sans-serif`
     ctx.textAlign = textAlign
 
     // 背景色
