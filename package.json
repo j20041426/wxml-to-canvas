@@ -1,5 +1,5 @@
 {
-  "name": "wxml-to-canvas",
+  "name": "@j20041426/wxml-to-canvas",
   "version": "1.2.0",
   "description": "",
   "main": "miniprogram_dist/index.js",
